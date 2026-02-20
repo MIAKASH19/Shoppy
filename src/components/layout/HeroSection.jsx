@@ -41,7 +41,6 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Hero Illustration */}
         <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center md:justify-end relative">
           <div className="w-full max-w-lg">
             <img

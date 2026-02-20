@@ -2,7 +2,7 @@
 import ProductGrids from "@/components/product/ProductGrids";
 import { getAllProducts } from "@/services/productService";
 import { useEffect, useState } from "react";
-import ProductSkeleton from "@/components/product/ProductSkeleton";
+import ProductSkeleton from "@/components/skeleton/ProductSkeleton";
 
 export default function Home() {
   const [products, setProducts] = useState([]);

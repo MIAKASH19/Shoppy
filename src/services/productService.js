@@ -8,3 +8,10 @@ export async function getAllProducts (){
     return res.json();
 }
 
+export async function getProductById (id){
+    const res = await fetch(`${BASE_URL}/products/${id}`)
+    if (!res) {
+        throw new Error("Failed to Fetch Product")
+    }
+    return res.json();
+}

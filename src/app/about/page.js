@@ -1,5 +1,3 @@
-"use client";
-
 import { FaRocket, FaShieldAlt, FaUsers } from "react-icons/fa";
 
 export default function AboutUs() {
