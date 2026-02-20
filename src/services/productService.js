@@ -15,3 +15,11 @@ export async function getProductById (id){
     }
     return res.json();
 }
+
+export async function getCategories (){
+    const res = await fetch(`${BASE_URL}/products/categories`)
+    if (!res) {
+        throw new Error("Failed to Fetch Categories")
+    }
+    return res.json();
+}

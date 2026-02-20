@@ -1,10 +1,8 @@
 "use client"
-import React from 'react'
-
-const error = () => {
+export default function Error({ error }) {
   return (
-    <div>error</div>
-  )
+    <div className="py-20 text-center text-red-500">
+      Something went wrong.
+    </div>
+  );
 }
-
-export default error
