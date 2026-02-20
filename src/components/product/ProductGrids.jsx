@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductCard from './ProductCard'
 
-const ProjectGrids = ({ products }) => {
+const ProductGrids = ({ products }) => {
     return (
         <div>
             <div className='py-5'>
@@ -16,4 +16,4 @@ const ProjectGrids = ({ products }) => {
     )
 }
 
-export default ProjectGrids
+export default ProductGrids

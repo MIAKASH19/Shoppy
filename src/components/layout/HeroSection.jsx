@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import ButtonFilled from './ButtonFilled';
+import ButtonFilled from "../ui/ButtonFilled";
 
 export default function HeroSection() {
   const highlights = [

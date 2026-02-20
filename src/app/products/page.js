@@ -1,7 +1,8 @@
 "use client";
-import ProjectGrids from "@/components/product/ProjectGrids";
+import ProductGrids from "@/components/product/ProductGrids";
 import { getAllProducts } from "@/services/productService";
 import { useEffect, useState } from "react";
+import ProductSkeleton from "@/components/product/ProductSkeleton";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -30,9 +31,15 @@ export default function Home() {
         All Products
       </h1>
       {loading ? (
-        <div> Loading ... </div>
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {Array(8)
+            .fill(0)
+            .map((_, i) => (
+              <ProductSkeleton key={i} />
+            ))}
+        </div>
       ) : (
-        <ProjectGrids products={products} />
+        <ProductGrids products={products} />
       )}
     </div>
   );
