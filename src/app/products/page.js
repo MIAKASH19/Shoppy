@@ -58,7 +58,7 @@ export default function Home() {
         setMaxPrice={setMaxPrice}
       />
       {loading ? (
-        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-2 md:gap-6 gap-3">
           {Array(8)
             .fill(0)
             .map((_, i) => (
