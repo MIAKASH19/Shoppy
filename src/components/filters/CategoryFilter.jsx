@@ -1,6 +1,6 @@
 export default function CategoryFilter({ categories, selectedCategory, setSelectedCategory }) {
   return (
-    <div className=" w-1/3 mb-4">
+    <div className="md:w-1/3 w-full mb-4">
       <h3 className="font-semibold mb-2">Category</h3>
       <select
         value={selectedCategory}
