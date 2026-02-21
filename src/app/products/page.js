@@ -24,7 +24,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const prod = await getAlProducts();
+        const prod = await getAllProducts();
         const cats = await getCategories();
         setProducts(prod);
         setFilteredProducts(prod);
