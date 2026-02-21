@@ -5,7 +5,7 @@ import ButtonGradient from "../ui/ButtonGradient";
 
 export default function HeroSection() {
   const highlights = [
-    { title: "Free Delivery", description: "On orders over ৳2000", icon: "🚚" },
+    { title: "Free Delivery", description: "On orders over $200", icon: "🚚" },
     { title: "24/7 Support", description: "We’re here to help", icon: "🕑" },
   ];
 
@@ -16,7 +16,7 @@ export default function HeroSection() {
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
             Find Products You'll <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-400 to-pink-400">Love & Trust</span>
           </h1>
-          <p className="text-md sm:text-lg dark:text-zinc-100 text-zinc-700 text-white/80 max-w-lg">
+          <p className="text-md sm:text-lg dark:text-zinc-100 text-zinc-700  max-w-lg">
             Shop premium items with fast delivery, secure payments, and unbeatable prices  all in one modern e-commerce experience.
           </p>
             <Link

@@ -94,7 +94,7 @@ export default function ProductDetails() {
 
             <Link
               href="/products"
-              className="px-6 py-3 rounded-xl border border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+              className="text-center px-6 py-3 rounded-xl border border-gray-300 dark:border-zinc-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
             >
               Back to Products
             </Link>

@@ -22,7 +22,7 @@ export default function AboutUs() {
   return (
     <section className="bg-white dark:bg-zinc-950 py-24">
       <div className="text-center max-w-3xl mx-auto">
-        <span className="text-4xl font-medium text-purple-500">
+        <span className="text-4xl font-semibold tracking-tighter text-purple-500">
           About Shoppy
         </span>
         <h2 className="mt-4 text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
