@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛍️ Shoppy - Mini E-Commerce Frontend
 
-## Getting Started
+Shoppy is a modern mini e-commerce frontend built using Next.js (App Router), React, and Tailwind CSS.
+This project was developed as part of a Frontend Developer Intern technical assessment
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- 📦 Product Listing Page
+  - Fetches products from FakeStore API
+  - Displays image, title, price, and short description
+  - Clean and responsive grid layout
+
+- 🔍 Filtering
+  - Filter by category
+  - Filter by price range
+  - Dynamic filtering without page reload
+
+- 📄 Product Details Page
+  - Dynamic routing using Next.js App Router
+  - Full product information display
+  - Loading skeleton state
+  - Error handling support
+
+- 📱 Fully Responsive
+  - Mobile, tablet, and desktop optimized
+
+- 📑 Pagination
+  - Client-side pagination implemented
+
+- 🎨 Modern UI
+  - Built with Tailwind CSS
+  - Dark mode support
+
+---
+
+## 🛠️ Tech Stack
+
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- FakeStore API
+
+---
+
+🧠 Architecture Overview
+
+- App Router is used for routing and layout structure.
+- Dynamic routes handle product details pages.
+- API logic is separated inside the services folder.
+- Filtering logic is isolated in utils for better reusability.
+- UI components are modular and reusable.
+- Skeleton components improve loading experience.
+- Clean folder structure maintained for scalability.
+
+
+## 📁 Project Structure
+
+Shoppy/
+├── public/                         # Static assets
+│
+├── src/
+│   ├── app/                        # Next.js App Router
+│   │   ├── about/
+│   │   │   └── page.js
+│   │   │
+│   │   ├── products/
+│   │   │   ├── [id]/               # Dynamic Product Details Route
+│   │   │   │   └── page.js
+│   │   │   └── page.js             # Product Listing Page
+│   │   │
+│   │   ├── error.js                # Global error handling UI
+│   │   ├── loading.js              # Global loading state
+│   │   ├── layout.js               # Root layout
+│   │   ├── page.js                 # Home page
+│   │   ├── globals.css             # Global styles
+│   │   └── favicon.ico
+│   │
+│   ├── components/                 # Reusable UI Components
+│   │
+│   │   ├── filters/
+│   │   │   ├── CategoryFilter.jsx
+│   │   │   ├── PriceFilter.jsx
+│   │   │   └── FilterSidebar.jsx
+│   │   │
+│   │   ├── layout/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   └── HeroSection.jsx
+│   │   │
+│   │   ├── product/
+│   │   │   ├── ProductCard.jsx
+│   │   │   └── ProductGrids.jsx
+│   │   │
+│   │   ├── Skeleton/
+│   │   │   ├── DetailSkeleton.jsx
+│   │   │   └── ProductSkeleton.jsx
+│   │   │
+│   │   └── ui/                     # Shared UI components
+│   │       ├── ButtonFilled.jsx
+│   │       ├── ButtonGradient.jsx
+│   │       ├── Container.jsx
+│   │       └── Logo.jsx
+│   │
+│   ├── services/                   # API service layer
+│   │   └── productService.js
+│   │
+│   └── utils/                      # Utility functions
+│       └── filterProducts.js
+│
+├── .gitignore
+├── eslint.config.mjs
+├── jsconfig.json
+├── next.config.mjs
+├── package.json
+├── package-lock.json
+├── postcss.config.mjs
+└── README.md
+
+
+
+
+## For Start The project
+
+Clone the repository:
 
 ```bash
+git clone https://github.com/MIAKASH19/Shoppy
+cd shoppy
+
+## Install dependencies:
+
+npm install
+
+##Run development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+🌍 Live Link:
+Live URL: https://shoppy.vercel.app
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+👨‍💻 Author
+Mazaharul Islam Akash 

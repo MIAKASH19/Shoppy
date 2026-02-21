@@ -24,7 +24,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const prod = await getAllProducts();
+        const prod = await getAlProducts();
         const cats = await getCategories();
         setProducts(prod);
         setFilteredProducts(prod);
@@ -45,7 +45,24 @@ export default function Home() {
     setCurrentPage(1);
   }, [products, selectedCategory, minPrice, maxPrice]);
 
-  if (error) return <div>There is an {error}</div>;
+  if (error) {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[40vh] text-center">
+      <h2 className="text-2xl font-semibold text-red-500 mb-4">
+        Failed to load products
+      </h2>
+      <p className="text-zinc-600 dark:text-zinc-400 mb-6">
+        {error}
+      </p>
+      <button
+        onClick={() => window.location.reload()}
+        className="px-5 py-2 bg-black text-white rounded-lg hover:opacity-90"
+      >
+        Retry
+      </button>
+    </div>
+  );
+}
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
