@@ -4,7 +4,7 @@ export default function ProductCard({ product }) {
     return (
         <Link
             href={`/products/${product.id}`}
-            className="group block  rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-shadow duration-300"
+            className="group block  rounded-2xl overflow-hidden bg-white border border-zinc-200 dark:border-zinc-600 shadow-sm hover:shadow-xl transition-shadow duration-300"
         >
             <div className="overflow-hidden h-64 flex items-center justify-center bg-gray-50">
                 <img

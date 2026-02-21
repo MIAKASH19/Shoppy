@@ -10,13 +10,13 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative text-white overflow-hidden">
+    <section className="relative dark:text-zinc-100 text-zinc-700 overflow-hidden">
       <div className="max-w-7xl mx-auto py-32 flex flex-col md:flex-row items-center md:justify-between">
         <div className="md:w-1/2 text-center md:text-left space-y-6">
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
             Find Products You'll <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-400 to-pink-400">Love & Trust</span>
           </h1>
-          <p className="text-md sm:text-lg text-white/80 max-w-lg">
+          <p className="text-md sm:text-lg dark:text-zinc-100 text-zinc-700 text-white/80 max-w-lg">
             Shop premium items with fast delivery, secure payments, and unbeatable prices  all in one modern e-commerce experience.
           </p>
             <Link
@@ -29,12 +29,12 @@ export default function HeroSection() {
             {highlights.map((item) => (
               <div
                 key={item.title}
-                className="flex items-center gap-4 bg-white/10 backdrop-blur-md rounded-2xl px-5 py-3 shadow-lg hover:scale-105 transform transition"
+                className="flex items-center gap-4 bg-white/10 border border-zinc-200 dark:border-zinc-600 backdrop-blur-md rounded-2xl px-5 py-3 shadow-lg hover:scale-105 transform transition"
               >
                 <span className="text-3xl">{item.icon}</span>
                 <div>
-                  <h3 className="font-semibold text-white">{item.title}</h3>
-                  <p className="text-sm text-white/80">{item.description}</p>
+                  <h3 className="font-semibold dark:text-zinc-100 text-zinc-700">{item.title}</h3>
+                  <p className="text-sm dark:text-zinc-100 text-zinc-700">{item.description}</p>
                 </div>
               </div>
             ))}

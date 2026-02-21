@@ -55,9 +55,9 @@ export default function ProductDetails() {
   }
 
   return (
-    <section className="min-h-screen bg-gray-50 dark:bg-zinc-950 py-16">
+    <section className="min-h-screen bg-white dark:bg-zinc-950 py-16">
       <div className="w-full grid md:grid-cols-2 gap-12 items-center">
-        <div className="bg-white rounded-3xl shadow-xl p-8 transition-transform duration-300">
+        <div className="bg-white border border-zinc-200 dark:border-zinc-600 rounded-3xl shadow-xl p-8 transition-transform duration-300">
           <Image
             src={product?.image || "product-image"}
             alt={product?.title || "product"}
@@ -87,10 +87,9 @@ export default function ProductDetails() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <ButtonGradient text={"Buy"} onClick={() => alert("Buy now")} />
+            <ButtonGradient text={"Buy"} />
             <ButtonFilled
               text={"Add to Cart"}
-              onClick={() => alert("Added to Cart")}
             />
 
             <Link
