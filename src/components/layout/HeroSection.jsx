@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import ButtonFilled from "../ui/ButtonFilled";
+import ButtonGradient from "../ui/ButtonGradient";
 
 export default function HeroSection() {
   const highlights = [
@@ -22,7 +22,7 @@ export default function HeroSection() {
             <Link
               href="/products"
             >
-              <ButtonFilled  text={"Browse Products"}/>
+              <ButtonGradient  text={"Browse Products"}/>
             </Link>
 
           <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center md:justify-start">

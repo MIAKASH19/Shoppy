@@ -18,6 +18,9 @@ export default function Home() {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(1000);
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 8;
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -39,15 +42,33 @@ export default function Home() {
     setFilteredProducts(
       filterProducts(products, selectedCategory, minPrice, maxPrice),
     );
+    setCurrentPage(1);
   }, [products, selectedCategory, minPrice, maxPrice]);
 
-  if (error) return <div> There is an {error} </div>;
+  if (error) return <div>There is an {error}</div>;
+
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct,
+  );
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+  const handlePageChange = (page) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+  };
 
   return (
     <div>
-      <h1 className="text-4xl uppercase text-center text-zinc-700 dark:text-zinc-200 py-10 font-semibold tracking-tighter">
+      <h1 className="text-6xl capitalize text-center text-zinc-700 dark:text-zinc-200 py-10 font-semibold tracking-tighter">
         All Products
       </h1>
+      <p className="text-center text-zinc-700 dark:text-zinc-400 mb-10">
+        Explore our wide range of products and find your favorites easily quality items, great prices, and fast delivery all in one place.
+      </p>
+
       <FilterSidebar
         categories={categories}
         selectedCategory={selectedCategory}
@@ -57,6 +78,7 @@ export default function Home() {
         setMinPrice={setMinPrice}
         setMaxPrice={setMaxPrice}
       />
+
       {loading ? (
         <div className="grid md:grid-cols-3 lg:grid-cols-4 grid-cols-2 md:gap-6 gap-3">
           {Array(8)
@@ -66,7 +88,45 @@ export default function Home() {
             ))}
         </div>
       ) : (
-        <ProductGrids products={filteredProducts} />
+        <>
+          <ProductGrids products={currentProducts} />
+
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center gap-3 mt-8">
+              {currentPage > 1 && (
+                <button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  className="px-4 py-2 rounded-lg border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+                >
+                  Prev
+                </button>
+              )}
+
+              {Array.from({ length: totalPages }, (_, i) => (
+                <button
+                  key={i}
+                  onClick={() => handlePageChange(i + 1)}
+                  className={`px-4 py-2 rounded-lg border ${
+                    currentPage === i + 1
+                      ? "bg-purple-600 text-white border-purple-600"
+                      : "border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-200"
+                  } hover:bg-gray-100 dark:hover:bg-zinc-800 transition`}
+                >
+                  {i + 1}
+                </button>
+              ))}
+
+              {currentPage < totalPages && (
+                <button
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  className="px-4 py-2 rounded-lg border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition"
+                >
+                  Next
+                </button>
+              )}
+            </div>
+          )}
+        </>
       )}
     </div>
   );

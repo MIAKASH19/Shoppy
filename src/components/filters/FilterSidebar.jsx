@@ -11,9 +11,18 @@ export default function FilterSidebar({
   setMaxPrice,
 }) {
   return (
-    <div className="w-full flex items-center justify-between p-4 bg-white dark:bg-zinc-900 rounded-lg shadow mb-5">
-      <CategoryFilter  categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-      <PriceFilter minPrice={minPrice} maxPrice={maxPrice} setMinPrice={setMinPrice} setMaxPrice={setMaxPrice} />
+    <div className="w-full bg-white dark:bg-zinc-900 rounded-lg shadow mb-5 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <CategoryFilter 
+        categories={categories} 
+        selectedCategory={selectedCategory} 
+        setSelectedCategory={setSelectedCategory} 
+      />
+      <PriceFilter 
+        minPrice={minPrice} 
+        maxPrice={maxPrice} 
+        setMinPrice={setMinPrice} 
+        setMaxPrice={setMaxPrice} 
+      />
     </div>
   );
 }

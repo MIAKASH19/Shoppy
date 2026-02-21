@@ -3,7 +3,7 @@ import ProductCard from './ProductCard'
 
 const ProductGrids = ({ products }) => {
     return (
-        <div>
+        <div >
             <div className='py-5'>
                 <h1 className='text-lg'>Total ({products.length})</h1>
             </div>

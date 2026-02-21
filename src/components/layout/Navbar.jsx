@@ -5,6 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HiOutlineMenu, HiOutlineX, HiOutlineShoppingCart } from "react-icons/hi";
 import { FaUserCircle } from "react-icons/fa";
+import { Logo } from "../ui/Logo";
+
+
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -20,9 +23,7 @@ export default function Navbar() {
     <nav className="bg-white dark:bg-zinc-900 shadow-md sticky top-0 z-50 transition-colors">
       <div className="max-w-7xl mx-auto py-4 flex justify-between items-center px-4 md:px-6">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-gray-900 dark:text-white">
-          Shoppy
-        </Link>
+        <Logo/>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-4">

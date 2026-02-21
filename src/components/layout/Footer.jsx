@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaFacebookF, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
+import { Logo } from "../ui/Logo";
 
 export default function Footer() {
   return (
@@ -7,9 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-4">
         
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-            Shoppy
-          </h2>
+          <Logo />
           <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
             Your trusted modern e-commerce platform. Shop smart, shop fast,
             shop secure.
