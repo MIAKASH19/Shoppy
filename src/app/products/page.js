@@ -2,7 +2,7 @@
 import ProductGrids from "@/components/product/ProductGrids";
 import { getAllProducts, getCategories } from "@/services/productService";
 import { useEffect, useState } from "react";
-import ProductSkeleton from "@/components/skeleton/ProductSkeleton";
+import ProductSkeleton from "@/components/Skeleton/ProductSkeleton";
 import FilterSidebar from "@/components/filters/FilterSidebar";
 import { filterProducts } from "@/utils/filterProducts";
 
