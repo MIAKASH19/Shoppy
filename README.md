@@ -56,7 +56,7 @@ This project was developed as part of a Frontend Developer Intern technical asse
 
 
 ## 📁 Project Structure
-
+```bash
 Shoppy/
 ├── public/                         # Static assets
 │
@@ -118,7 +118,7 @@ Shoppy/
 ├── postcss.config.mjs
 └── README.md
 
-
+```
 
 
 ## For Start The project
